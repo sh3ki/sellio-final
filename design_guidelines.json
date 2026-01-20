@@ -1,0 +1,156 @@
+{
+  "project_name": "Sellio",
+  "design_philosophy": {
+    "archetype": "The Performance Pro",
+    "core_vibe": "Tactical, Precise, High-Contrast, Efficient",
+    "description": "A production-ready POS system that feels like a command center. Dark, rich navs paired with high-clarity workspaces."
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Manrope, sans-serif",
+      "weights": ["600", "700", "800"],
+      "usage": "All headings (h1-h6). Use tight tracking (-0.02em) for sizes above 24px."
+    },
+    "body": {
+      "font_family": "Plus Jakarta Sans, sans-serif",
+      "weights": ["400", "500", "600"],
+      "usage": "All body text, inputs, and data tables. Optimized for legibility at small sizes."
+    },
+    "mono": {
+      "font_family": "JetBrains Mono, monospace",
+      "usage": "Transaction IDs, SKU codes, and financial data."
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "DEFAULT": "#0F172A",
+        "foreground": "#F8FAFC",
+        "50": "#F8FAFC",
+        "100": "#F1F5F9",
+        "200": "#E2E8F0",
+        "300": "#CBD5E1",
+        "400": "#94A3B8",
+        "500": "#64748B",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1E293B",
+        "900": "#0F172A",
+        "950": "#020617"
+      },
+      "accent": {
+        "DEFAULT": "#14B8A6",
+        "foreground": "#FFFFFF",
+        "50": "#F0FDFA",
+        "100": "#CCFBF1",
+        "200": "#99F6E4",
+        "300": "#5EEAD4",
+        "400": "#2DD4BF",
+        "500": "#14B8A6",
+        "600": "#0D9488",
+        "700": "#0F766E",
+        "800": "#115E59",
+        "900": "#134E4A"
+      },
+      "background": "#F8FAFC",
+      "surface": "#FFFFFF",
+      "border": "#E2E8F0",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444"
+    },
+    "theme_strategy": {
+      "light_mode": {
+        "background": "bg-slate-50",
+        "card_bg": "bg-white",
+        "text_primary": "text-slate-900",
+        "text_secondary": "text-slate-500",
+        "border": "border-slate-200"
+      },
+      "dark_mode": {
+        "background": "bg-slate-950",
+        "card_bg": "bg-slate-900",
+        "text_primary": "text-slate-50",
+        "text_secondary": "text-slate-400",
+        "border": "border-slate-800"
+      }
+    }
+  },
+  "layout": {
+    "spacing_scale": "Generous. Use p-6 or p-8 for cards. Gap-6 for grids.",
+    "radius": "rounded-lg (0.5rem)",
+    "sidebar": {
+      "width": "w-64",
+      "collapsed_width": "w-20",
+      "bg": "bg-slate-900",
+      "text": "text-slate-300",
+      "active_item": "bg-teal-500/10 text-teal-400 border-r-2 border-teal-400"
+    },
+    "dashboard_grid": {
+      "type": "Bento Grid",
+      "classes": "grid grid-cols-1 md:grid-cols-12 gap-6",
+      "kpi_card": "col-span-12 md:col-span-3",
+      "main_chart": "col-span-12 md:col-span-8 row-span-2",
+      "recent_list": "col-span-12 md:col-span-4 row-span-2"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-slate-900 text-white hover:bg-slate-800 shadow-lg shadow-slate-900/20",
+      "accent": "bg-teal-500 text-white hover:bg-teal-600 shadow-lg shadow-teal-500/20",
+      "outline": "border-2 border-slate-200 hover:border-slate-900 hover:bg-transparent text-slate-900"
+    },
+    "cards": {
+      "style": "bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-200",
+      "header": "border-b border-slate-100 p-6",
+      "content": "p-6"
+    },
+    "inputs": {
+      "style": "bg-slate-50 border-slate-200 focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all"
+    },
+    "tables": {
+      "header": "bg-slate-50 text-slate-500 uppercase text-xs font-bold tracking-wider",
+      "row": "hover:bg-slate-50 transition-colors border-b border-slate-100"
+    }
+  },
+  "assets": {
+    "images": {
+      "landing_hero": "https://images.pexels.com/photos/8386656/pexels-photo-8386656.jpeg",
+      "testimonial_avatar": "https://images.pexels.com/photos/3932718/pexels-photo-3932718.jpeg",
+      "products": [
+        {
+          "name": "Artisan Coffee Blend",
+          "url": "https://images.pexels.com/photos/4829080/pexels-photo-4829080.jpeg",
+          "category": "Beverage"
+        },
+        {
+          "name": "Noise-Cancelling Headphones",
+          "url": "https://images.pexels.com/photos/3394666/pexels-photo-3394666.jpeg",
+          "category": "Electronics"
+        },
+        {
+          "name": "Minimalist Ceramic Mug",
+          "url": "https://images.pexels.com/photos/6312177/pexels-photo-6312177.jpeg",
+          "category": "Home"
+        }
+      ]
+    },
+    "icons": "Lucide React (already installed)"
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install 'clsx' and 'tailwind-merge' if not present for dynamic classes.",
+    "2. THEME: Implement the 'Dark Blue + Teal' theme by overriding the CSS variables in index.css first.",
+    "3. LAYOUT: Create a 'DashboardLayout' component that includes the Sidebar and Topbar. Wrap all app pages (Dashboard, POS, Inventory, etc.) in this layout.",
+    "4. POS PAGE: This is the core feature. It must be a split screen: Left side = Product Grid (3 cols), Right side = Cart/Checkout (fixed width 400px).",
+    "5. MOCK DATA: Create a robust 'mockData.js' file with at least 20 products and 10 recent transactions using the images provided.",
+    "6. CHARTS: Use Recharts for the Dashboard. Style them to match the theme (Teal lines, Slate axis).",
+    "7. LANDING PAGE: Make it distinct from the app. Use a dark hero section with the 'landing_hero' image as a subtle background overlay or side visual.",
+    "8. ANIMATION: Add subtle entrance animations to the dashboard cards using framer-motion or simple CSS keyframes."
+  ],
+  "universal_guidelines": [
+    "Do not use generic 'Inter' font. Import Manrope and Plus Jakarta Sans from Google Fonts.",
+    "Ensure all interactive elements have hover states.",
+    "Use 'data-testid' for all buttons and inputs.",
+    "Never use pure black (#000000). Use Slate-950 (#020617) instead."
+  ]
+}
